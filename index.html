@@ -237,9 +237,9 @@
     <div class="columns is-centered">
       <div class="column">
         <div class="content">
-          <h2 class="title is-3">DADA Can Improve Multi-Dialectal Robustness</h2>
+          <h2 class="title is-3">DADA Can Improve Multi-Dialectal Robustness!</h2>
           <p>
-            We demonstrate here how DADA can enable the adaptation of an existing SAE model to multiple dialect variants, taking the RoBERTa Base model and Multi-Genre Natural Language Inference (MNLI) task as an example. 
+            We demonstrate here how DADA can enable the adaptation of an existing SAE model to multiple dialect variants, taking the RoBERTa Base model and MNLI task as an example. 
           </p>
 
           <div class="image-section" style="text-align: center;">
@@ -248,8 +248,8 @@
 
           <p>
             Compared to the standard SAE model trained on the original MNLI dataset (Baseline), DADA demonstrates significant performance improvements across all evaluated dialects and even on SAE. 
-            Moreover, DADA delivers comparable performance to the strong baseline provided by individual further fine-tuning on the SAE-trained model with dialect-specific training data (Individual).
-            However, while this approach requires a perfect dialect identification system and $D$ models, our approach uses a single model and therefore does not rely on dialect identification.
+            Moreover, DADA delivers comparable performance to the strong baseline provided by individual further adapter tuning on the SAE-trained model with dialect-specific training data (Individual).
+            However, while this approach requires a perfect dialect identification system and multiple models, our approach uses a single model and therefore does not rely on dialect identification.
             This makes DADA a simpler and more realistic method for use when the target dialect distribution is unknown.
           </p>
         </div>
@@ -258,7 +258,71 @@
   </div>
 </section>
 
-  
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column">
+        <div class="content">
+          <h2 class="title is-3">DADA Can Be Task-Agnostic!</h2>
+          <p>
+            Recent LLMs are instruction-tuned for various tasks, which is orthogonal to our method, making it possible to combine the two approaches easily. Here, we demonstrate that DADA can be employed in instruction-tuned LLMs to improve their task-agnostic performance on dialects!
+          </p>
+          
+          <div class="image-section" style="text-align: center;">
+            <img src="./static/images/multi_task.png" alt="process" style="max-width: 80%; height: auto; display: block; margin-left: auto; margin-right: auto; margin-bottom: 50px;">
+          </div>
+
+          <p>
+            It is surprising to note that although individual adapter tuning (Individual) demonstrates improvements in 4 out of 7 tasks, the overall average performance is even inferior to that of the SAE baseline.
+            In contrast, DADA consistently outperforms both the SAE Baseline and Individual across all evaluated tasks.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column">
+        <div class="content">
+          <h2 class="title is-3">DADA Has Great Interpretability!</h2>
+          <p>
+            We perform a correlation analysis of the 10 feature adapters of AAVE for the linguistic features applied to the input data. We plot the results for layers 1, 3, 7, 11 here.
+          </p>
+      
+          <div class="image-section" style="text-align: center;">
+            <img src="./static/images/coefplots.pdf" alt="process" style="max-width: 80%; height: auto; display: block; margin-left: auto; margin-right: auto; margin-bottom: 50px;">
+          </div>
+          <p>
+            We find that significant correlations in utilization on the lower layers (0-3) can be observed, while those on the middle and higher layers are found to be negligible.
+            This is consistent with intuition, as the primary distinction between SAE and its dialect variants lies in their linguistic features (lexical and morphosyntactic), which are mainly captured by the lower layers of the model.
+            This analysis demonstrates that DADA can detect which linguistic features are relevant to the given input, and subsequently trigger the corresponding feature adapters. This highlights the interpretability of DADA!
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column">
+        <div class="content">
+          <h2 class="title is-3">Conclusion</h2>
+          <p>
+            In this paper, we present Dialect Adaptation via Dynamic Aggregation (DADA), a fine-grained and modular approach designed to adapt an established model trained on Standard American English to its dialect variants through the compositional aggregation of linguistic features. 
+            Our experiments demonstrate that the compositionality of DADA enables targeted adaptation to specific dialects, and improved robustness across multiple dialects.
+            Our analysis also highlights its interpretability, as shown through its capability to identify relevant linguistic features for a given input and trigger the corresponding adapters.
+            Furthermore, our experiments illustrate the potential of applying DADA to task-agnostic instruction-tuned large language models, showcasing its generalizability.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
