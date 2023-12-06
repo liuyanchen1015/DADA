@@ -153,7 +153,7 @@
         <img src="./static/images/DADA.png"
              class="summary-image"
              alt="DADA"
-             style="width: 65%; display: block; margin-left: auto; margin-right: auto;">
+             style="width: 60%; display: block; margin-left: auto; margin-right: auto;">
         <figcaption class="image-caption" style="margin-top: 8px; margin-bottom: 0px; font-size: 0.9em;">
           DADA dynamically composes adapters that handle specific features of dialectal variation to adapt an SAE model to various dialects by leveraging their commonality. We train nearly 200 feature adapters to capture the linguistic differences between SAE and its dialect variants. These feature adapters can be composed flexibly and arbitrarily to target different dialects.
         </figcaption>
@@ -171,6 +171,27 @@
         <div class="content has-text-justified">
           <p>
             Existing large language models (LLMs) that mainly focus on Standard American English (SAE) often lead to significantly worse performance when being applied to other English dialects. While existing mitigations tackle discrepancies for individual target dialects, they assume access to high-accuracy dialect identification systems. The boundaries between dialects are inherently flexible, making it difficult to categorize language into discrete predefined categories. In this paper, we propose DADA (Dialect Adaptation via Dynamic Aggregation), a modular approach to imbue SAE-trained models with multi-dialectal robustness by composing adapters which handle specific linguistic features. The compositional architecture of DADA allows for both targeted adaptation to specific dialect variants and simultaneous adaptation to various dialects. We show that DADA is effective for both single task and instruction finetuned language models, offering an extensible and interpretable framework for adapting existing LLMs to different English dialects.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Background -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Background</h2>
+        <div class="content has-text-justified">
+          <p>
+            As Natural Language Processing (NLP) becomes even more impactful, the equitable distribution of its benefits becomes an increasing concern. Specifically, NLP tooling is often trained and evaluated on dominant language variants, such as Standard American English (SAE). This results in a significant decline in performance when these tools are applied to non-SAE dialects. Notably, even large language models are not exempt from these limitations. Such performance disparities raise ethical and moral concerns regarding the potential for racial disparities in the seemingly expeditious development of language technologies 
+          </p>
+
+          <p>
+            Existing research to mitigate this disparity has mainly focused on dialectal adaptation targeting individual dialects of interest. These methods require the development of separate systems for different dialects and highly accurate dialect identification systems for real-world uses. However, such separate systems are not yet available for many dialects and related languages.
           </p>
         </div>
       </div>
