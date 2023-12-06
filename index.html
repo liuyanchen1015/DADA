@@ -158,7 +158,7 @@
              alt="DADA"
              style="width: 60%; display: block; margin-left: auto; margin-right: auto;">
         <figcaption class="image-caption" style="margin-top: 8px; margin-bottom: 0px; font-size: 0.9em;">
-          DADA dynamically composes adapters that handle specific features of dialectal variation to adapt an SAE model to various dialects by leveraging their commonality. We train nearly 200 feature adapters to capture the linguistic differences between SAE and its dialect variants. These feature adapters can be composed flexibly and arbitrarily to target different dialects.
+          DADA dynamically composes adapters that handle specific features of dialectal variation to adapt an <span class="SAE">SAE</span> model to various dialects by leveraging their commonality. We train nearly 200 feature adapters to capture the linguistic differences between <span class="SAE">SAE</span> and its dialect variants. These feature adapters can be composed flexibly and arbitrarily to target different dialects.
         </figcaption>
       </figure>
     </div>
@@ -173,7 +173,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Existing large language models (LLMs) that mainly focus on Standard American English (SAE) often lead to significantly worse performance when being applied to other English dialects. While existing mitigations tackle discrepancies for individual target dialects, they assume access to high-accuracy dialect identification systems. The boundaries between dialects are inherently flexible, making it difficult to categorize language into discrete predefined categories. In this paper, we propose DADA (Dialect Adaptation via Dynamic Aggregation), a modular approach to imbue SAE-trained models with multi-dialectal robustness by composing adapters which handle specific linguistic features. The compositional architecture of DADA allows for both targeted adaptation to specific dialect variants and simultaneous adaptation to various dialects. We show that DADA is effective for both single task and instruction finetuned language models, offering an extensible and interpretable framework for adapting existing LLMs to different English dialects.
+            Existing large language models (LLMs) that mainly focus on Standard American English (<span class="SAE">SAE</span>) often lead to significantly worse performance when being applied to other English dialects. While existing mitigations tackle discrepancies for individual target dialects, they assume access to high-accuracy dialect identification systems. The boundaries between dialects are inherently flexible, making it difficult to categorize language into discrete predefined categories. In this paper, we propose DADA (Dialect Adaptation via Dynamic Aggregation), a modular approach to imbue <span class="SAE">SAE</span>-trained models with multi-dialectal robustness by composing adapters which handle specific linguistic features. The compositional architecture of DADA allows for both targeted adaptation to specific dialect variants and simultaneous adaptation to various dialects. We show that DADA is effective for both single task and instruction finetuned language models, offering an extensible and interpretable framework for adapting existing LLMs to different English dialects.
           </p>
         </div>
       </div>
@@ -189,7 +189,7 @@
         <div class="content">
           <h2 class="title is-3">Background</h2>
           <p>
-            Current NLP tooling is often trained and evaluated on dominant language variants, such as Standard American English (SAE). This results in a significant decline in performance when these tools are applied to non-SAE dialects (even LLMs are not exempt). Such performance disparities raise ethical and moral concerns regarding the potential for racial disparities in the seemingly expeditious development of language technologies.
+            Current NLP tooling is often trained and evaluated on dominant language variants, such as Standard American English (<span class="SAE">SAE</span>). This results in a significant decline in performance when these tools are applied to non-<span class="SAE">SAE</span> dialects (even LLMs are not exempt). Such performance disparities raise ethical and moral concerns regarding the potential for racial disparities in the seemingly expeditious development of language technologies.
           </p>
 
           <div class="image-section" style="text-align: center;">
@@ -212,7 +212,7 @@
         <div class="content">
           <h2 class="title is-3">Dialect and Non-Standard Linguistic Feature</h2>
           <p>
-            Dialects can be described by a common set of linguistic rules (non-standard linguistic features), that describe the differences between SAE and various other English dialects. Each dialect can express a subset of this feature space. In addition, dialects are not deterministic patterns but rather ranges of acceptable use of these features that speakers adjust based on social contexts. Therefore, dialects do not neatly fit into predefined categories.
+            Dialects can be described by a common set of linguistic rules (non-standard linguistic features), that describe the differences between <span class="SAE">SAE</span> and various other English dialects. Each dialect can express a subset of this feature space. In addition, dialects are not deterministic patterns but rather ranges of acceptable use of these features that speakers adjust based on social contexts. Therefore, dialects do not neatly fit into predefined categories.
             Here is an example: Negative Concord, a linguistic feature common in many English dialects, involves using multiple negative words or phrases to reinforce a negative meaning.
           </p>
 
@@ -238,7 +238,7 @@
         <div class="content">
           <h2 class="title is-3">Dialect Adaptation via Dynamic Aggregation</h2>
           <p>
-            We introduce Dialect Adaptation via Dynamic Aggregation (DADA), a modular method for adapting an existing model trained on the SAE to accommodate dialect variants at a finer-grained level, in 3 steps.
+            We introduce Dialect Adaptation via Dynamic Aggregation (DADA), a modular method for adapting an existing model trained on the <span class="SAE">SAE</span> to accommodate dialect variants at a finer-grained level, in 3 steps.
           </p>
 
           <div class="image-section" style="text-align: center;">
@@ -246,12 +246,12 @@
           </div>
           <h4 class="title is-5">Step 1: Synthetic Datasets Construction</h4>
           <p>
-            Previous works have discerned a series of linguistic divergences and devised Multi-VALUE, a collection of lexical and morphosyntactic transformation rules between SAE and its 50 dialect variants, including Appalachian English (AppE), Chicano English (ChcE), Colloquial Singapore English (CollSgE), Indian English (IndE), and African American Vernacular English (AAVE), among others. For each transformation rule, we first generate a corresponding synthetic dataset by applying the respective rule to each individual training example within the original training dataset.
+            Previous works have discerned a series of linguistic divergences and devised Multi-VALUE, a collection of lexical and morphosyntactic transformation rules between <span class="SAE">SAE</span> and its 50 dialect variants, including Appalachian English (<span class="AppE">AppE</span>), Chicano English (<span class="ChcE">ChcE</span>), Colloquial Singapore English (<span class="CollSgE">CollSgE</span>), Indian English (<span class="IndE">IndE</span>), and African American Vernacular English (<span class="AAVE">AAVE</span>), among others. For each transformation rule, we first generate a corresponding synthetic dataset by applying the respective rule to each individual training example within the original training dataset.
           </p>
 
           <h4 class="title is-5" style="margin-top: 30px;">Step 2: Feature Adapter Training</h4>
           <p>
-            Secondly, we develop a feature adapter for each linguistic transformation rule by training it on the corresponding synthetic dataset. Each trained feature adapter can capture a specific type of linguistic difference between SAE and its dialect variants.
+            Secondly, we develop a feature adapter for each linguistic transformation rule by training it on the corresponding synthetic dataset. Each trained feature adapter can capture a specific type of linguistic difference between <span class="SAE">SAE</span> and its dialect variants.
           </p>
 
           <h4 class="title is-5" style="margin-top: 30px;">Step 3: Dynamic Aggregation</h4>
@@ -259,8 +259,8 @@
             However, it is common for multiple linguistic differences to co-occur within a single sentence in real-world scenarios, thereby necessitating the model to consider these distinct linguistic features to varying degrees simultaneously.
           </p>
           <p>
-            Therefore, in the third step, we propose to dynamically aggregate the trained feature adapters, into the SAE-trained backbone model via an additional fusion layer.
-            Through training on the super-synthetic dataset, a parameterized compositional mixture of feature adapters can be learned to identify the applied linguistic features for a given input and activate the corresponding feature adapters, thereby facilitating the effective addressing of linguistic discrepancies between SAE and its dialect variants.
+            Therefore, in the third step, we propose to dynamically aggregate the trained feature adapters, into the <span class="SAE">SAE</span>-trained backbone model via an additional fusion layer.
+            Through training on the super-synthetic dataset, a parameterized compositional mixture of feature adapters can be learned to identify the applied linguistic features for a given input and activate the corresponding feature adapters, thereby facilitating the effective addressing of linguistic discrepancies between <span class="SAE">SAE</span> and its dialect variants.
           </p>
           
         </div>
@@ -276,7 +276,7 @@
         <div class="content">
           <h2 class="title is-3">DADA Can Improve Multi-Dialectal Robustness!</h2>
           <p>
-            We demonstrate here how DADA can enable the adaptation of an existing SAE model to multiple dialect variants, taking the RoBERTa Base model and MNLI task as an example. 
+            We demonstrate here how DADA can enable the adaptation of an existing <span class="SAE">SAE</span> model to multiple dialect variants, taking the RoBERTa Base model and MNLI task as an example. 
           </p>
 
           <div class="image-section" style="text-align: center;">
@@ -284,8 +284,8 @@
           </div>
 
           <p>
-            Compared to the standard SAE model trained on the original MNLI dataset (Baseline), DADA demonstrates significant performance improvements across all evaluated dialects and even on SAE. 
-            Moreover, DADA delivers comparable performance to the strong baseline provided by individual further adapter tuning on the SAE-trained model with dialect-specific training data (Individual).
+            Compared to the standard <span class="SAE">SAE</span> model trained on the original MNLI dataset (Baseline), DADA demonstrates significant performance improvements across all evaluated dialects and even on <span class="SAE">SAE</span>. 
+            Moreover, DADA delivers comparable performance to the strong baseline provided by individual further adapter tuning on the <span class="SAE">SAE</span>-trained model with dialect-specific training data (Individual).
             However, while this approach requires a perfect dialect identification system and multiple models, our approach uses a single model and therefore does not rely on dialect identification.
             This makes DADA a simpler and more realistic method for use when the target dialect distribution is unknown.
           </p>
@@ -310,8 +310,8 @@
           </div>
 
           <p>
-            It is surprising to note that although individual adapter tuning (Individual) demonstrates improvements in 4 out of 7 tasks, the overall average performance is even inferior to that of the SAE baseline.
-            In contrast, DADA consistently outperforms both the SAE Baseline and Individual across all evaluated tasks.
+            It is surprising to note that although individual adapter tuning (Individual) demonstrates improvements in 4 out of 7 tasks, the overall average performance is even inferior to that of the <span class="SAE">SAE</span> baseline.
+            In contrast, DADA consistently outperforms both the <span class="SAE">SAE</span> Baseline and Individual across all evaluated tasks.
           </p>
         </div>
       </div>
@@ -326,19 +326,19 @@
         <div class="content">
           <h2 class="title is-3">DADA Has Great Interpretability!</h2>
           <p>
-            We perform a correlation analysis of the 10 feature adapters of AAVE for the linguistic features applied to the input data. We plot the results for layers 1, 3, 7, 11 here.
+            We perform a correlation analysis of the 10 feature adapters of <span class="AAVE">AAVE</span> for the linguistic features applied to the input data. We plot the results for layers 1, 3, 7, 11 here.
           </p>
           
           <figure class="image-container" style="text-align: center;">
             <img src="./static/images/coefplots.png" alt="process" style="max-width: 100%; height: auto; display: block; margin-left: auto; margin-right: auto; margin-bottom: 50px;">
             <figcaption class="image-caption" style="margin-top: 8px; margin-bottom: 0px; font-size: 0.9em;">
-              Correlation Coefficients for AAVE adaptation between the feature adapters (column) and the inputs to which specific linguistic features (row) apply in layers 1, 3, 7, 11. We use abbreviations for certain terms, such as "nc" for "negative_concord."
+              Correlation Coefficients for <span class="AAVE">AAVE</span> adaptation between the feature adapters (column) and the inputs to which specific linguistic features (row) apply in layers 1, 3, 7, 11. We use abbreviations for certain terms, such as "nc" for "negative_concord."
             </figcaption>
           </figure>
           
           <p>
             We find that significant correlations in utilization on the lower layers (0-3) can be observed, while those on the middle and higher layers are found to be negligible.
-            This is consistent with intuition, as the primary distinction between SAE and its dialect variants lies in their linguistic features (lexical and morphosyntactic), which are mainly captured by the lower layers of the model.
+            This is consistent with intuition, as the primary distinction between <span class="SAE">SAE</span> and its dialect variants lies in their linguistic features (lexical and morphosyntactic), which are mainly captured by the lower layers of the model.
             This analysis demonstrates that DADA can detect which linguistic features are relevant to the given input, and subsequently trigger the corresponding feature adapters. This highlights the interpretability of DADA!
           </p>
         </div>
