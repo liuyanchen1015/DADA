@@ -239,19 +239,19 @@
           </p>
 
           <div class="image-section" style="text-align: center;">
-            <img src="./static/images/process.png" alt="process" style="max-width: 80%; height: auto; display: block; margin-left: auto; margin-right: auto; margin-bottom: 200px;">
+            <img src="./static/images/process.png" alt="process" style="max-width: 90%; height: auto; display: block; margin-left: auto; margin-right: auto; margin-bottom: 200px;">
           </div>
-          <h4 class="title is-5">Synthetic Datasets Construction</h4>
+          <h4 class="title is-5">Step 1: Synthetic Datasets Construction</h4>
           <p>
             Previous works have discerned a series of linguistic divergences and devised Multi-VALUE, a collection of lexical and morphosyntactic transformation rules between SAE and its 50 dialect variants, including Appalachian English (AppE), Chicano English (ChcE), Colloquial Singapore English (CollSgE), Indian English(IndE), and African American Vernacular English (AAVE), among others. For each transformation rule, we first generate a corresponding synthetic dataset by applying the respective rule to each individual training example within the original training dataset.
           </p>
 
-          <h4 class="title is-5">Feature Adapter Training</h4>
+          <h4 class="title is-5">Step 2: eature Adapter Training</h4>
           <p>
             Secondly, we develop a feature adapter for each linguistic transformation rule by training it on the corresponding synthetic dataset. Each trained feature adapter can capture a specific type of linguistic difference between SAE and its dialect variants.
           </p>
 
-          <h4 class="title is-5">Dynamic Aggregation</h4>
+          <h4 class="title is-5">Step 3: Dynamic Aggregation</h4>
           <p>
             However, it is common for multiple linguistic differences to co-occur within a single sentence in real-world scenarios, thereby necessitating the model to simultaneously consider these distinct linguistic features to varying degrees.
           </p>
