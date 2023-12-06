@@ -234,23 +234,24 @@
       <div class="column">
         <div class="content">
           <h2 class="title is-3">Dialect Adaptation via Dynamic Aggregation</h2>
+          <p>
+            We introduce Dialect Adaptation via Dynamic Aggregation (DADA), a modular method for adapting an existing model trained on the SAE to accommodate dialect variants at a finer-grained level, in 3 steps.
+          </p>
+
           <div class="image-section" style="text-align: center;">
             <img src="./static/images/process.png" alt="process" style="max-width: 50%; height: auto; display: block; margin-left: auto; margin-right: auto;">
           </div>
-            We introduce Dialect Adaptation via Dynamic Aggregation (DADA), a modular method for adapting an existing model trained on the SAE to accommodate dialect variants at a finer-grained level, in 3 steps.
-          <p>
-          </p>
-          <h4 class="title is-3">Synthetic Datasets Construction</h4>
+          <h4 class="title is-5">Synthetic Datasets Construction</h4>
           <p>
             Previous works have discerned a series of linguistic divergences and devised Multi-VALUE, a collection of lexical and morphosyntactic transformation rules between SAE and its 50 dialect variants, including Appalachian English (AppE), Chicano English (ChcE), Colloquial Singapore English (CollSgE), Indian English(IndE), and African American Vernacular English (AAVE), among others. For each transformation rule, we first generate a corresponding synthetic dataset by applying the respective rule to each individual training example within the original training dataset.
           </p>
 
-          <h4 class="title is-3">Feature Adapter Training</h4>
+          <h4 class="title is-5">Feature Adapter Training</h4>
           <p>
             Secondly, we develop a feature adapter for each linguistic transformation rule by training it on the corresponding synthetic dataset. Each trained feature adapter can capture a specific type of linguistic difference between SAE and its dialect variants.
           </p>
 
-          <h4 class="title is-3">Dynamic Aggregation</h4>
+          <h4 class="title is-5">Dynamic Aggregation</h4>
           <p>
             However, it is common for multiple linguistic differences to co-occur within a single sentence in real-world scenarios, thereby necessitating the model to simultaneously consider these distinct linguistic features to varying degrees.
             Therefore, in the third step, we propose to dynamically aggregate the trained feature adapters, into the SAE-trained backbone model via an additional fusion layer.
