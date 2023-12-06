@@ -214,11 +214,11 @@
           </p>
 
           <div class="image-section" style="text-align: center;">
-            <img src="./static/images/example.png" alt="feature_example" style="max-width: 50%; height: auto; display: block; margin-left: auto; margin-right: auto;">
+            <img src="./static/images/example.png" alt="feature_example" style="max-width: 50%; height: auto; display: block; margin-left: auto; margin-right: auto; margin-bottom: 5;">
           </div>
 
           <p>
-            To this end, our work proposes a method that can accommodate the diversity of dialect variants at a fine-grained level (non-standard linguistic features or linguistic rules).
+            To this end, our work proposes a method that can accommodate the diversity of dialect variants at a <span class="highlight">fine-grained level</span> (non-standard linguistic features or linguistic rules).
           </p>
           
         </div>
@@ -239,7 +239,7 @@
           </p>
 
           <div class="image-section" style="text-align: center;">
-            <img src="./static/images/process.png" alt="process" style="max-width: 50%; height: auto; display: block; margin-left: auto; margin-right: auto;">
+            <img src="./static/images/process.png" alt="process" style="max-width: 80%; height: auto; display: block; margin-left: auto; margin-right: auto; margin-bottom: 20;">
           </div>
           <h4 class="title is-5">Synthetic Datasets Construction</h4>
           <p>
@@ -254,6 +254,8 @@
           <h4 class="title is-5">Dynamic Aggregation</h4>
           <p>
             However, it is common for multiple linguistic differences to co-occur within a single sentence in real-world scenarios, thereby necessitating the model to simultaneously consider these distinct linguistic features to varying degrees.
+          </p>
+          <p>
             Therefore, in the third step, we propose to dynamically aggregate the trained feature adapters, into the SAE-trained backbone model via an additional fusion layer.
             Through training on the super-synthetic dataset, a parameterized compositional mixture of feature adapters can be learned to identify the applied linguistic features for a given input and activate the corresponding feature adapters, thereby facilitating the effective addressing of linguistic discrepancies between SAE and its dialect variants.
           </p>
