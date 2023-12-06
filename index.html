@@ -209,7 +209,7 @@
           </div>
           <h4 class="title is-5">Step 1: Synthetic Datasets Construction</h4>
           <p>
-            Previous works have discerned a series of linguistic divergences and devised Multi-VALUE, a collection of lexical and morphosyntactic transformation rules between SAE and its 50 dialect variants, including Appalachian English (AppE), Chicano English (ChcE), Colloquial Singapore English (CollSgE), Indian English(IndE), and African American Vernacular English (AAVE), among others. For each transformation rule, we first generate a corresponding synthetic dataset by applying the respective rule to each individual training example within the original training dataset.
+            Previous works have discerned a series of linguistic divergences and devised Multi-VALUE, a collection of lexical and morphosyntactic transformation rules between SAE and its 50 dialect variants, including Appalachian English (AppE), Chicano English (ChcE), Colloquial Singapore English (CollSgE), Indian English (IndE), and African American Vernacular English (AAVE), among others. For each transformation rule, we first generate a corresponding synthetic dataset by applying the respective rule to each individual training example within the original training dataset.
           </p>
 
           <h4 class="title is-5" style="margin-top: 30px;">Step 2: Feature Adapter Training</h4>
@@ -219,7 +219,7 @@
 
           <h4 class="title is-5" style="margin-top: 30px;">Step 3: Dynamic Aggregation</h4>
           <p>
-            However, it is common for multiple linguistic differences to co-occur within a single sentence in real-world scenarios, thereby necessitating the model to simultaneously consider these distinct linguistic features to varying degrees.
+            However, it is common for multiple linguistic differences to co-occur within a single sentence in real-world scenarios, thereby necessitating the model to consider these distinct linguistic features to varying degrees simultaneously.
           </p>
           <p>
             Therefore, in the third step, we propose to dynamically aggregate the trained feature adapters, into the SAE-trained backbone model via an additional fusion layer.
@@ -232,6 +232,31 @@
   </div>
 </section>
 
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column">
+        <div class="content">
+          <h2 class="title is-3">DADA Can Improve Multi-Dialectal Robustness</h2>
+          <p>
+            We demonstrate here how DADA can enable the adaptation of an existing SAE model to multiple dialect variants, taking the RoBERTa Base model and Multi-Genre Natural Language Inference (MNLI) task as an example. 
+          </p>
+
+          <div class="image-section" style="text-align: center;">
+            <img src="./static/images/multi_dialect.png" alt="process" style="max-width: 80%; height: auto; display: block; margin-left: auto; margin-right: auto; margin-bottom: 50px;">
+          </div>
+
+          <p>
+            Compared to the standard SAE model trained on the original MNLI dataset (Baseline), DADA demonstrates significant performance improvements across all evaluated dialects and even on SAE. 
+            Moreover, DADA delivers comparable performance to the strong baseline provided by individual further fine-tuning on the SAE-trained model with dialect-specific training data (Individual).
+            However, while this approach requires a perfect dialect identification system and $D$ models, our approach uses a single model and therefore does not rely on dialect identification.
+            This makes DADA a simpler and more realistic method for use when the target dialect distribution is unknown.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
   
 
